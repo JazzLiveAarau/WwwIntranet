@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>RowHeader class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>RowHeader class 2012-12-02</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>RowHeader class</h3>
+
+<p>
+The class RowHeader holds the header data for the rows. Has functions to set and retrieve data.<br>
+<br>
+
+
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+<p>
+ArrayList m_array_header_fields List of fields<br>
+<a href="../Excel/excel_field_header.htm">FieldHeader</a>[] m_header_fields 
+All field headers in the row header<br>
+int m_number_colums Number of colums (fields)<br>
+<br>
+ 
+<br>
+</p>
+
+<h5>Member functions</h5> 
+<p>
+int NumberColumns Get number of columns<br>
+RowHeader() Constructor<br>
+AddFieldHeader(FieldHeader field) Adds a field header to the header row<br>
+FieldHeader GetFieldHeader(index_field, error) Get header field for a given index<br>
+RemoveFieldHeader(index_field, error) Remove Field header<br>
+InsertFieldHeader(FieldHeader field_header, index_insert, error) Insert field header<br>
+<br>
+
+<br>
+</p>
+
+<p align="Left"><img src="excel_row_header_1.jpg" alt="RowHeader class" width="600">
+
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\Excel\excel_row_header_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="../Excel/excel_field_header.htm">FieldHeader</a> 
+&nbsp;&nbsp;
+
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="excel.htm">Excel</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

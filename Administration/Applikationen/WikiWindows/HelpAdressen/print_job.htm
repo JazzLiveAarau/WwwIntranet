@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>PrintJob class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>PrintJob class 2012-12-03</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>PrintJob class</h3>
+
+<p>
+Print job utility functions.<br>
+
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+
+<p>
+PrintInput m_print_input Input data for printing<br>
+Table m_table_addresses Input table with addresses<br>
+MapCaptionField m_map_caption_field Class for the mapping of caption to field index<br>
+PrintDocument m_print_document_default Default print document<br>
+float a4_width = 210.0 A4 form width<br>
+float a4_height = 297.0 A4 form height<br>
+Font m_text_font Text font<br>
+<br>
+
+<br>
+</p>
+
+<h5>Member functions</h5> 
+
+<p>
+PrintJob(PrintInput print_input, Table addresses) Constructor<br>
+DefaultPrinterPrint(error) Print with the default printer<br>
+SetSizesForFieldsAndDeltas(Graphics graphics, error) Sets sizes for fields and deltas between fields<br>
+DefaultPrinterPrint() Send data to the default printer<br>
+m_print_document_default_PrintPage(...) Print page event. Printing data with the default printer<br>
+<br>
+
+Private<br>
+_InitializeFieldSizes() Initializes the field sizes to -1.0<br>
+_SetSizesForFieldsAndDeltas(Graphics) Set sizes for fields and deltas<br>
+_MaxHeightsForFieldsOneRow(Graphics, Row, string i_caption, io_height, error) Determine the text height<br>
+_MaxWidthsForFieldsOneRow(Graphics, Row, string i_caption, io_width, io_height, error) Maximum field sizes for one row<br>
+_PrintAll(Graphics) Send all data to the default printer<br>
+_PrintRow(row_index, Row, Font, Graphics) Print row<br>
+_PrintField(Row, Font, caption, PointF position, Graphics) Print field<br>
+float _StringWidth(string, Font, Graphics) Returns the width of a string with a given font in millimeter<br>
+float _StringHeight(string, Font, Graphics) Returns the height of a string with a given font in millimeter<br>
+<br>
+ 
+<br>
+</p>
+
+
+<p align="Left"><img src="print_job_1.jpg" alt="PrintJob class" width="840">
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\HelpAdressen\print_job_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="addresses_util.htm">AdressesUtility</a>
+&nbsp;&nbsp;
+
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="h_adressen.htm">Help Adressen</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

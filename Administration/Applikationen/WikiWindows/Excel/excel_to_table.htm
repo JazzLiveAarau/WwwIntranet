@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>ToTable class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>ToTable class 2012-12-02</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>ToTable class</h3>
+
+<p>
+The class ToTable has functions that convert "table" files in different formats 
+to <a href="../Excel/excel_table.htm">Table</a>.<br>
+<br>
+
+Implemented is the conversion of a .CSV file.<br>
+<br>
+
+Other file types that could be implemnted are XSL, XSLX, XML.<br>
+<br>
+
+
+<br>
+</p>
+ 
+<h5>Member variable</h5> 
+<p>
+Allowed delimiters in the CSV file are semi-colon, colon and comma. <br>
+They are defined in a string array:<br>
+<br>
+
+string[] m_csv_delimiters <br>
+<br>
+
+</p>
+
+<h5>Member functions</h5> 
+<p>
+CsvToTable(file_csv, Table io_table, 
+<a href="../DetectEncoding/encoding.htm">Encoding</a> io_encoding, error) Convert the .csv file to a table<br>
+CsvToTable(file_csv, ref Table io_table, error) Convert the .csv file to a table<br>
+CsvToTable(file_csv, Table io_table, csv_delimiter, Encoding io_encoding, error)  Convert the .csv file to a table<br>
+<br>
+Private functions<br>
+_CsvCreateRow(string row, delimiter, number_fields, Row o_row, error) Returns one row in the .csv file as a Row object<br>
+string _CsvDelimiter(string i_row, int o_number_fields) Determines and returns the delimiter between the fields in a row from a .csv file<br>
+_DetectEncoding(file_csv, Encoding o_encoding, error) Detect the encoding of a file<br>
+
+
+</p>
+ 
+ 
+<p align="Left"><img src="excel_to_table_1.jpg" alt="ToTable class" width="600"> 
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\Excel\excel_to_table_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="../Excel/excel_table.htm">Table</a>
+&nbsp;&nbsp;
+<br>
+<a href="../DetectEncoding/encoding.htm">Detect Encoding</a>
+&nbsp;&nbsp;
+<br>
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="excel.htm">Excel</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

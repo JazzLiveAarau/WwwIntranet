@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Row class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>Row class 2012-12-02</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>Row class</h3>
+
+<p>
+The class Row holds the data for a row in a 
+<a href="../Excel/excel_table.htm">table</a>. Has functions to add, remove and retrieve data.<br>
+<br>
+
+
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+<p>
+ArrayList m_array_fields  List of fields<br>
+<a href="../Excel/excel_field.htm">Field</a>[] m_fields All fields in the row<br>
+int m_number_colums Number of columns (fields)<br>
+<br>
+
+
+<br>
+</p>
+
+<h5>Member functions</h5> 
+<p>
+int NumberColumns Get number of columns (fields)<br>
+Row() Constructor<br>
+AddField(Field field) Adds a field to the row<br>
+RemoveField(index_field, error) Remove field with a given index<br>
+InsertField(index_field, Field field, error) Insert a field where the position is defined by index<br>
+SetFieldValue(index_field, string value, error) Set field value for field defined by the index<br>
+Field GetField(index_field, error) Get field for a given index<br>
+<br>
+
+<br>
+</p>
+ 
+<p align="Left"><img src="excel_row_1.jpg" alt="Row class" width="430"> 
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\Excel\excel_row_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="../Excel/excel_field.htm">Field</a> 
+&nbsp;&nbsp;
+<br>
+<a href="../Excel/excel_table.htm">Table</a> 
+&nbsp;&nbsp;
+<br>
+
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="excel.htm">Excel</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

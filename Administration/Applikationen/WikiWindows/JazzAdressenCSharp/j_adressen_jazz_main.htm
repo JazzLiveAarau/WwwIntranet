@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>JazzMain class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>JazzMain class 2014-11-07</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>JazzMain class</h3>
+
+<p>
+This class executes most of the commands coming from the controls of the JazzForm form.<br>
+The other command execution classes are Output and Reset. In the GUI 
+<a href="j_adressen_jazz_form.htm">JazzForm</a> class should nothing be executed.<br>
+<br>
+
+Typical commands are: Add or delete a person in the address database, sort records, output lists, etc.<br>
+<br>
+
+At start of the application the current address list (a CSV file) will be downloaded with FTP.<br>
+<br>
+
+The downloaded address list defines an instance of the class Table that holds all data of the list.<br>
+<br>
+
+Changes of the address list can only be done if the address list has been checked out.<br>
+Checkout means that the user will be registered in an checkin/checkout file (also down- and uploaded with FTP).<br>
+Only one person at a time can checkout the address list.<br>
+<br>
+
+
+The FTP directories and user names are defined in the configuration file for application Jazz Adressen.<br>
+The FTP passwords are hardcoded as member variables in this class.<br>
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+<p>
+string m_ftp_password FTP password for the download and upload of the addresses CSV file login/logout file<br>
+string m_ftp_password_setup FTP password for the download of an installer for a new version
+<a href="../Excel/excel_table.htm">Table</a> m_table_addresses Addresses table. The table corresponds to the input/otput CSV file.<br>
+string m_exe_directory PPath to the exe directory. Used to get the paths to the application subdirectories (Excel, Output, etc)<br>
+<a href="j_adressen_jazz_form.htm">JazzForm</a> m_main_form  The main form for this application. Commands are coming from controls of this form.<br>
+Encoding m_file_encoding Read and write encoding<br>
+bool m_addresses_checked_out Flag telling if the addresses list has been checked out<br>
+<br>
+
+</p>
+
+<h5>Member functions</h5> 
+<p>
+JazzMain(JazzForm i_main_form) Constructor<br>
+<br>
+The config file will be created by a function in class AddressesJazzSettings if not existing in the exe directory.<br>
+After the installation of a new version of the application Jazz Adressen it should (must) be created.<br>
+<br>
+i_main_form The main form for application Jazz Adressen<br>
+<br>
+<br>
+
+
+
+bool CreateAndUploadFiles(error) Create and upload the address CSV file<br>
+<br>
+Upload of the address file is only allowed if addresses has been checked out.<br>
+The function checks if there is an Internet connection.<br>
+The checkin/checkout log file is downloaded with FTP. Return with error message if not checked out.<br>
+The address CSV file and a backup copy is created by the function TableToCsv in class FromTable.<br>
+The CSV files are uploaded by the function UploadFile in the class Ftp.UpLoad.<br>
+A checkin line is added in the checkin/checkout log file. This file is also upoaded with UploadFile.<br>
+The flag m_addresses_checked_out is set to false.<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+
+bool DownloadFile(error) Download the addresses CSV file from the server with FTP<br>
+<br>
+The function checks if there is an Internet connection.<br>
+The addresses CSV file is downloaded with function DownloadFile in class Ftp.DownLoad.<br>
+The file is saved in a subdirectory (Excel) to the exe directory.<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+UploadCheckOutInFileButNotAddresses(error)  Check in without saving addresses
+<br>
+Function for the case that addresses are checked out but the user don't want to upload (save) the file.<br>
+The checkin/checkout log file is downloaded with FTP and a checkin line is appended.<br>
+The checkin/checkout log file is upoaded with UploadFile in class Ftp.UpLoad.<br>
+The flag m_addresses_checked_out is set to false.<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+
+DownloadNewVersion(error) Download new version of Jazz Adressen from the server with FTP
+<br>
+The function checks if there is an Internet connection.<br>
+The installer is (and possibly other files are) downloaded with function Getfiles in class Ftp.DownLoad.<br>
+The installer is saved in a subdirectory (NeueVersion) to the exe directory.<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+GetSaveAddressesMessage(message, caption, error) Get the error message when the user has checked out addresses and exits the aapplication with cancel.
+<br>
+message Error message<br>
+caption Caption for the error message<br>
+error Error description<br>
+<br>
+<br>
+
+CheckOutAddresses(error) Check out the addresses file
+<br>
+The checkin/checkout file is downloaded (with function _DownloadCheckOutInLogFile).<br>
+The fields of the last row in the file is retrieved (with function _GetLastRowCheckInOutFields)<br>
+Return with error if addresses already are checked out by somebody else.<br>
+Append logout line with function _AppendLogFileRow<br>
+Upload the checkin/checkout file with function UploadFile in class Ftp.UpLoad.<br>
+The flag m_addresses_checked_out is set to true.<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+ForceCheckOutAddresses(error) Check out the addresses file without checking if is checked in
+<br>
+Force a checkout even if addresses are checked out by somebody else.<br>
+This function should normally not be called!<br>
+The checkin/checkout file is downloaded (with function _DownloadCheckOutInLogFile).<br>
+Append logout line with function _AppendLogFileRow<br>
+Upload the checkin/checkout file with function UploadFile in class Ftp.UpLoad.<br>
+The flag m_addresses_checked_out is set to true.<br>
+ <br>
+error Error description<br>
+<br>
+<br>
+
+_AddressesAreCheckedOut(file_name, error) Returns false if addresses not are checked out by this computer
+ <br>
+The fields of the last row in the file is retrieved (with function _GetLastRowCheckInOutFields)<br>
+Return with error if computer field name not is equal to this computer.<br>
+ <br>
+file_name Full local name of the checkin-checkout file<br>
+error Error description<br>
+<br>
+<br>
+
+
+_DownloadCheckOutInLogFile(server_file_name, local_file_name, error) Download the checkin/checkout file from the server with FTP
+<br>
+The function checks if there is an Internet connection.<br>
+The checkin/checkout file is downloaded with function DownloadFile in class Ftp.DownLoad.<br>
+<br>
+server_file_name server checkin-checkout file name<br>
+local_file_name Full name of checkin-checkout file<br>
+error Error description<br>
+<br>
+<br>
+
+_AppendLogFileRow(file_name, start_append_row) Append row to login-logout file
+<br>
+Time and machine (computer) is added to the input string.<br>
+The line is appended to the file.<br>
+<br>
+file_name Full input file name<br>
+start_append_row Start string for the append row (login or logout)<br>
+error Error description<br>
+<br>
+<br>
+
+_GetLastRowCheckInOutFields(file_name, start, time, error) Get the fields of the last row of the checkin-checkout file 
+<br>
+The start of each row is defined by configuration file strings CheckInLogFile and CheckOutLogFile<br>
+<br>
+file_name Full input file name<br>
+start Start field of the row<br>
+time Time field of the row<br>
+machine Machine name field of the row<br>
+error Error description<br>
+<br>
+<br>
+
+_GetLastRow(file_name, last_row) Get last row of the input file 
+ <br>
+file_name Full input file name<br>
+last_row Last (non-empty) row of the file<br>
+error Error description<br>
+<br>
+<br>
+
+
+
+bool LocalFileExists(error) Returns false if local file is missing<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+
+
+bool CreateAddressesTable(error) Create addresses table from the addresses list<br>
+<br>
+An instance of class Table is created (member variable m_table_addresses)<br>
+Data is set with the function CsvToTable in class ToTable<br>
+<br>
+error Error description<br>
+<br>
+<br>
+
+ReplaceAddressesTable(local_file, error) Replace the existing addresses table with a new table defined by an input (backup) file<br>
+<br>
+For the case that the address CSV file is corrupted a backup file can be used.<br>
+Create an instance of Table<br>
+Set (backup) data with function CsvToTable in class ToTable<br>
+Set m_table_addresses to the new Table instance<br>
+<br>
+local_file Input CSV file with full path<br>
+error Error description<br>
+<br>
+<br>
+
+
+
+Table GetTable Returns the table (m_table_addresses)with addresses <br>
+<br>
+<br>
+
+bool Search(search_string, display_strings, indices, error) Returns a string array with found records and a corresponding array with record indices<br>
+<br>
+The function GetRows in class TableSearch is used to get the records with the given search string.<br>
+Search is made in fields first name and family name.<br>
+<br>
+search_string Search string<br>
+display_strings Display strings<br>
+indices Record indices<br>
+error Error description<br>
+<br>
+<br>
+
+
+
+Sort(column_header, error) Sorts the table<br>
+<br>
+Function SortField in class TableSort is called.<br>
+<br>
+column_header Column header string<br>
+error Error description<br>
+<br>
+<br>
+
+SetSupportToZeroForRow(row_index, error) Set support for all seasons to zero (0) in a given row
+<br>
+The support is not allowed to be empty<br>
+<br>
+row_index Index for the input row<br>
+error Error description<br>
+<br>
+<br>
+
+
+AppendEmptyRow(row_index, error) Append empty row to the table<br>
+<br>
+row_index Index for the added row<br>
+error Error description<br>
+<br>
+<br>
+
+
+bool RemoveRow(row_index, error) Remove row in the table<br>
+<br>
+row_index">Index for that shall be removed<br>
+error Error description<br>
+<br>
+<br>
+
+
+
+
+Function that only is used once:<br>
+bool CPlusPlusToCSharp Convert format from C++ application to the C# application. Everything is hardcoded.<br>
+<br>
+</p>
+
+
+<!-- 
+
+       <member name="M:AddressesJazz.JazzMain.GetOutputFileName(System.String)">
+            <summary>Returns the full file name for an output file
+            <para>A help function in class AdressesUtility.FileUtil is called to construct the name.</para>
+            </summary>
+            <param name="i_file_name">File name with extension without path</param>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetAddressesFileName">
+            <summary>Returns the full file name for the addresses file</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetAddressesFileNameBeta">
+            <summary>Returns the full file name for the Beta version addresses file</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetOldAddressesFileName">
+            <summary>Returns the old (C++ application) format full file name for the addresses file</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetConvertedAddressesFileName">
+            <summary>Returns the full file name for the converted addresses file. Temporary function!</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetFtpAddressesFileName">
+            <summary>Returns the file name for the FTP addresses file</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetCheckInOutLogFileName">
+            <summary>Returns the file name for the checkin-checkout logfile</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetFtpOldAddressesFileName">
+            <summary>Returns the old (used by the C++ application) file name for the FTP addresses file</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._GetBackupAddressesFileName">
+            <summary>Returns the full file name for the backup addresses file</summary>
+        </member>
+
+        <member name="M:AddressesJazz.JazzMain._StringToEnum(System.String)">
+            <summary>Convert field type string to field type enum</summary>
+        </member>
+        <member name="M:AddressesJazz.JazzMain._SetRowHeader(ExcelUtil.RowHeader@)">
+            <summary>Set Create addresses table from the addresses list</summary>
+        </member>
+
+        <member name="P:AddressesJazz.JazzMain.AddressesCheckedOut">
+            <summary>Get or set the flag telling if the addresses list has been checked out</summary>
+        </member>
+<p align="Left"><img src="j_adressen_main_class_1.jpg" alt="JazzMain class" width="900">
+
+C:\Development\Wiki\JazzAdressenCSharp\j_adressen_overview_1.jpg
+
+<h5>See also</h5>  
+
+<p>
+<a href="../Ftp/ftp.htm">Ftp</a> 
+&nbsp;&nbsp;
+
+</p>
+-->
+ 
+
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="j_adressen.htm">Jazz Adressen</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

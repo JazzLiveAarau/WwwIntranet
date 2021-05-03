@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>TableTools class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>TableTools class 2012-12-02</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>TableTools class</h3>
+
+<p>
+The class TableTools has functions for modification of <a href="../Excel/excel_table.htm">Tables</a>.<br>
+<br>
+
+<br>
+</p>
+ 
+
+<h5>Member functions</h5> 
+<p>
+RemoveColumn(Table io_table, column_index, error) Remove table column defined by the column index<br>
+RemoveColumn(ref Table io_table, column_header, error) Remove table column defined by the column header<br>
+CreateColumn(string[] fields_as_strings, 
+<a href="../Excel/excel_column.htm">Column</a> column, error) Create a column from an array of strings that are the column field values<br>
+GetColumn(Table, column_index, Column o_column, FieldHeader, error) Get a table column defined by the column index<br>
+MoveColumn(Table io_table, column_header, column_move_before, error) Move a column defined by its header<br>
+GetColumn(Table i_table, column_header, Column, FieldHeader, error) Get a table column defined by the column header<br>
+GetColumns(Table i_table, column_search, Column[], FieldHeader[], error) Get table columns defined by a search string<br>
+InsertColumn(Table io_table, column_index, Column, FieldHeader, error) Insert table column defined by the column index<br>
+InsertColumn(Table io_table, column_header, Column, FieldHeader, error) Insert table column defined by the column header<br>
+InsertColumn(Table io_table, column_index, Column, error) Insert table column defined by the column index<br>
+InsertColumn(Table io_table, column_header, Column, error) Insert table column defined by the column header<br>
+ChangeColumnName(Table io_table, column_index, new_name, error) Change name of table column defined by the column index<br>
+ChangeColumnName(Table io_table, column_header, new_name, error) Change name of table column defined by the column string<br>
+ChangeColumnName(Column io_column, new_name, error)
+<br>
+
+
+<br>
+</p>
+ 
+ 
+<p align="Left"><img src="excel_table_tools_1.jpg" alt="TableTools class" width="640"> 
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\Excel\excel_table_tools_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="../Excel/excel_table.htm">Table</a>
+&nbsp;&nbsp;
+<br>
+<a href="../Excel/excel_column.htm">Column</a>
+&nbsp;&nbsp;
+<br>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="excel.htm">Excel</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

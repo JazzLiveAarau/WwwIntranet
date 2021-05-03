@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>MapCaptionField class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>MapCaptionField class 2012-12-03</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>MapCaptionField class</h3>
+
+<p>
+Map caption to field index.<br>
+
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+
+<p>
+RowHeader m_row_header Row header with captions<br>
+<br>
+int m_field_10<br>
+int m_field_11<br>
+int m_field_12<br>
+int m_field_13<br>
+...<br>
+int m_field_90<br>
+int m_field_91<br>
+int m_field_92<br>
+int m_field_93<br>
+<br>
+
+PrintInput m_print_input Input data for printing<br>
+Table m_table_addresses  Input table with addresses<br>
+<br>
+ 
+<br>
+</p>
+
+<h5>Member functions</h5> 
+
+<p>
+MapCaptionField(PrintInput, Table) Constructor<br>
+Map(error) Map captions to field index<br>
+int FieldIndex(string caption) Returns the field index for a given caption<br>
+<br>
+
+
+Private<br>
+_MapOneField(int o_field_xy, string caption, error) Map one field<br>
+<br>
+
+<br>
+</p>
+
+<p align="Left"><img src="map_caption_field_1.jpg" alt="MapCaptionField class" width="430">
+ 
+<!-- 
+
+C:\GunnarDevelopment\Wiki\HelpAdressen\map_caption_field_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="addresses_util.htm">AdressesUtility</a>
+&nbsp;&nbsp;
+
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="h_adressen.htm">Help Adressen</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Table class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#F5F5F5">
+ 
+<center><font size=-1>Table class 2012-12-02</font></center>
+ 
+<P>
+<HR width="100%" align="center"></P>
+ 
+<h3>Table class</h3>
+
+<p>
+The class Table holds data for a table. Has functions to set and retrieve data.<br>
+<br>
+
+
+<br>
+</p>
+ 
+<h5>Member variables</h5> 
+<p>
+string m_name Name of the table<br>
+<a href="../Excel/excel_row_header.htm">RowHeader</a> m_row_header Header data for the rows (columns)<br>
+ArrayList m_array_rows List of rows<br>
+<a href="../Excel/excel_row.htm">Row</a>[] m_rows All rows in the table<br>
+m_number_rows Number of rows in the table<br>
+m_number_colums Number of colums in the table<br>
+<br>
+
+<br>
+</p>
+
+<h5>Member functions</h5> 
+<p>
+Table(string i_name) Constructor setting the table name<br>
+Table(string i_name, RowHeader i_row_header) Constructor setting name and row header<br>
+RowHeader GetRowHeader() Returns the header row<br>
+bool HasHeaderData() Returns true if the table has header data<br>
+SetFieldString(index_row, index_field, field_value, error) Sets a field value that is a string<br>
+SetFieldString(index_row, column_name, field_value, error) Sets a field value that is a string<br>
+string GetFieldString(index_row, index_field, error) Returns field value as a string<br>
+string GetFieldString(index_row, column_name, error) Returns field value as a string<br>
+int NumberRows Get and set number of rows<br>
+int NumberColumns Get and set number of columns<br>
+int GetColumnIndex(Row row, string column_name) Get column index for a given column name<br>
+AddEmptyRow(row_index, error) Adds (appends) an empty row to the table<br>
+AddRow(Row, error) Adds (appends) a row to the table<br>
+Row GetRow(index_row, error) Get row for a given index<br>
+RemoveRow(index_row, error) Remove row<br>
+InsertRow(Row row, index_insert, error) Inserts a row in the table<br>
+MoveRow(index_row, index_move_to, error) Move row<br>
+<br>
+
+<br>
+</p>
+ 
+<p align="Left"><img src="excel_table_1.jpg" alt="Table class" width="780"> 
+ 
+<!-- 
+C:\GunnarDevelopment\Wiki\Excel\excel_table_1.jpg
+-->
+ 
+<h5>See also</h5>  
+
+<p>
+<a href="../Excel/excel_row.htm">Row</a> 
+&nbsp;&nbsp;
+<br>
+<a href="../Excel/excel_row_header.htm">RowHeader</a> 
+&nbsp;&nbsp;
+<br>
+
+</p>
+ 
+ 
+<hr width="100%" align="center">&nbsp;
+<center><table CELLSPACING=10 CELLPADDING=0 >
+<tr>
+ 
+<td><a href="excel.htm">Excel</a></td>
+</tr>
+</table></center>
+ 
+</BODY>
+</HTML>
