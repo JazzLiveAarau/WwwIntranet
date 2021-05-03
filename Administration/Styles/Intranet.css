@@ -1,0 +1,74 @@
+/* 
+File: Intranet.css          Date: 2021-05-01 
+Authors: Gunnar Liden
+
+Allgemeine Informationen
+========================
+
+Definiert alle Style-Klassen für die Applikation Intranet
+
+*/
+
+/* Für das <body> Element */
+body
+{
+    background-color: #F5F5F5;
+    font-family: 'Arial';
+}
+
+/* Für das JAZZ live AARAU Text-Logo <div> Element */
+.cl_intranet_text_logo
+{
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 0, 40);
+    text-align: center;
+}
+
+/* Für das Seite-Titel <div> Element */
+.cl_intranet_page_header
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+/* Für das Inhalt der Seite <div> Element */
+.cl_intranet_page_content
+{
+    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: black;
+    clear: both;
+}
+
+/* Für das Inhalt der Seite <div> Element */
+.cl_intranet_page_content_row
+{
+    margin-bottom: 15px;
+    clear: both;
+}
+
+/* Für das Inhalt Link <div> Element */
+.cl_intranet_page_content_row_link
+{
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 130px;
+    float: left;
+}
+
+/* Für das Inhalt Beschreibung <div> Element */
+.cl_intranet_page_content_row_descr
+{
+    padding: 5px;
+    width: auto;
+    float: left;
+}

@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Reservation Beschreibung</title>
+
+      <!-- Styles für die Applikation Intranet   -->
+      <link rel="stylesheet" href="../Styles/Intranet.css">
+
+  </head>
+  <body>
+    <hr>
+    <div class= "cl_intranet_page_header">Reservationen</div>
+    <hr>
+  
+    <div class= "cl_intranet_page_content">  
+      <h3>Web-Applikation für Reservationen</h3>
+
+      <p>
+
+        Mit der Web-Applikation für Reservationen<br>
+        - kann der Konzertbesucher selbst Plätze auswählen <br>
+        - wird eine Reservationsbestätigung automatisch gesendet <br>
+        - kann am Konzerttag Reservationskarten gedruckt werden <br>
+        <br>
+      </p> 
+
+      <h3>Reservation auf der Homepage zufügen</h3>
+
+      <p>
+        Konzertbescher reservieren Plätze auf der JAZZ <i>live</i> AARAU Homepage. In der App sowie<br>
+        im Newsletter gibt es ein Link zur Homepage Webeseite.<br>
+
+        <br>
+
+        Das Homepage Reservationsfenster öffnet die Webseite <i>MakeReservation.htm</i> um Plätze <br>
+        auszuwählen und zu speichern.<br>
+        <br>
+
+        Nach dem Speichern der Reservationsdaten (XML Datei), wird eine Reservations-Bestätigung an <br>
+        die im Homepage Reservationsfenster eingegebene E-Mail-Adresse gesendet.<br>
+        <br>
+
+        Eine Kopie der E-Mail wird (als BCC) auch an reservation@jazzliveaarau.ch geschickt. <br>
+        <br>
+        Falls die eingegebene E-Mail-Adresse ungültig ist, wird eine E-Mail mit Information darüber <br>
+        vom Server an reservation@jazzliveaarau.ch gesendet. <br>
+        <br>
+        Die Weiterleitungsadresse für die Fehler-E-Mail kann man ändern. Instruktionen hier als
+        <a href="Manuals/NotValidEmailAddress.pdf">PDF</a> und als 
+        <a href="Manuals/NotValidEmailAddress.docx">DOCX</a><br>
+        <br>
+
+        <br>
+      </p>  
+      
+      <h3>Im Intranet Reservationen zufügen und administrieren</h3>
+
+      <p>
+
+        Mit der Webseite <a href="http://www.jazzliveaarau.ch/Reservation/AddReservation.htm" target="_blank">AddReservation.htm</a> 
+        können Reservationen erfasst, gespeichert sowie eine Liste <br>
+        mit allen Reservationen generiert werden.<br>
+        <br>
+
+        Vor dem Konzert können Reservationskarten mit einer Funktion in <i>AddReservation.htm</i> gedruckt werden.<br>
+        <br>
+
+        <br>
+      </p>
+
+      <h3>Multi-Anwender Lösung</h3>
+
+      <p>
+        Nach jeder Platzwahl und vor dem Speichern kontrolliert die Applikation ob durch jemand anders (gleichzeitig)<br>
+        Plätze reserviert wurden. Falls dies zutrifft, wird der Benutzer die Meldung erhalten, neue Plätze<br>
+        gewählt werden müssen. Die von ihm gewählten Plätze wechseln die Farbe von gelb zu rot.<br>
+        <br>
+
+        Da die Anzahl Reservationen nicht gross ist, ist dieser Fall eher unwahrscheinlich.<br>
+        <br>
+
+        Eine Lösung mit Checkout, wie für die Applikationen Admin und Adressen, ist also nicht implementiert.<br>
+        <br>
+
+        <br>  
+      </p>  
+
+      <h3>Hilfe Dokument für <i>MakeReservation.htm</i></h3>
+
+      <p>
+
+        Es gibt ein Dokument, dass das Speichern von der XML Reservations-Datei und die Multi-Anwender Lösung<br>
+        in detail (für einen Entwickler) beschreibt: Als <a href="Manuals/JavaScriptPhp.pdf">PDF</a> sowie 
+        <a href="Manuals/JavaScriptPhp.docx">DOCX</a><br>
+        <br>
+
+        <br>
+      </p>  
+
+      <h3>Maximale Anzahl reservierte Sitzplätze</h3>
+
+      <p>
+
+        In der XML Datei für den Tischplan (LayoutSalmen.xml) ist auch die maximale Anzahl reservierte Sitzplätze.<br>
+        Es ist eine Prozentzahl von der Anzahl Sitzplätze. Normaler Wert is 50%;<br>
+        <br>
+
+        <br>
+      </p>  
+
+      <h3>Reservationsbestätigung</h3>
+
+      <p>
+        Für E-Mails an reservation@jazzliveaarau.ch erhält  man eine automatische Antwort.<br>
+        <br>
+        Die von <i>MakeReservation.htm</i> automatisch geschickte Bestätigungs-E-Mails enthält<br>
+        nachfolgenden Text, zudem auch die detaillierten Reservationsdaten.<br>
+        <br>
+        
+
+        ---------------------------------------------------------------------- <br>
+        <br>
+        Liebe Konzertbesucherin, lieber Konzertbesucher<br>
+        <br>
+
+        Die erfolgte Reservation ist bei uns eingetroffen, besten Dank. <br>
+        Die gewünschte Anzahl Plätze wird für Sie bereitgestellt und muss<br>
+        bis spätestens 10 Minuten vor Konzertbeginn eingenommen werden.<br>
+        <br>
+
+        Wir wünschen Ihnen bereits jetzt ein unvergessliches Konzerterlebnis.<br>
+        <br>
+
+        Herzlich<br>
+        <b>JAZZ <i>live</i> AARAU</b><br>
+        <br>
+        ---------------------------------------------------------------------- <br>
+        <br>
+      </p>   
+
+      <h3>Implementierung</h3>
+
+      <p>
+
+        Die Applikation ist basierend auf: <a href="Reservation_scripts.htm">HTML, JavaScript, XML, SVG und PHP</a>.<br>
+        
+        <br>
+      </p> 
+
+      <h3>Quellcode ist in einem GitHub Projektarchiv (Repository)</h3>
+
+      <p>
+
+        Auf der <a href="https://de.wikipedia.org/wiki/GitHub"  target="_blank">GitHub</a> Homepage ist der Organisation JAZZ live AARAU registriert. <br>
+        <br>
+
+        Nach  <a href="https://github.com/login"  target="_blank">Login</a> als WebmasterAarau (oder GunnarAarau) kann das Projektarchiv heruntergeladen werden.<br>
+        
+        <br>
+      </p> 
+
+      <h3>Entwicklung mit Visual Studio Code</h3>
+
+      <p>
+
+        Die Web-Applikation Reservationen wir mit 
+        <a href="https://code.visualstudio.com/"  target="_blank">Visual Studio Code</a> entwickelt. <br>
+        <br>
+
+        
+        <br>
+      </p>       
+
+      <h3>Texte der Web-Applikation</h3>
+
+      <p>
+        Liste mit sämtliche Texte <a href="http://www.jazzliveaarau.ch/Reservation/ReservationStrings.htm">ReservationStrings.htm</a>. <br>
+        <br>
+
+        <br>
+      </p>
+
+      <h3>Browserdaten löschen</h3>
+
+      <p>
+        Jeder Browser speichert Webseiten auf dem Computer. Beim Surfen, wenn man zurück zu einer Seite geht, wird sie nicht wieder <br>
+        vom Server heruntergeladen. Sie wird vom Computer geholt. Das nennt man Browser-Cache und macht das Surfen viel schneller. <br>
+        Der Nachteil ist, dass die im Cache gespeicherten Daten veraltet sein können, wenn die Webseite zwischenzeitlich aktualisiert wurde.<br>
+        <br>
+
+        Beim Reservieren öffnet der Benutzer die Eingabe-Webseite StartReservation.htm (für Name, E-Mail und Bemerkung) zuerst. <br>
+        Danach Webseite MakeReservation.htm wo die Plätze selektiert werden. Nach Speichern der Reservation wird MakeReservation.htm <br>
+        zugemacht, und der Benutzer kommt wieder zur Webseite StartReservation.htm.<br>
+        <br>
+
+        Wenn der Benutzer noch eine Reservation machen möchte, soll die Webseite MakeReservation.htm nicht vom eigenen Computer geholt werden, <br>
+        sondern wieder vom Server heruntergeladen werden, d.h. der Benutzer sollte vorher die Browserdaten löschen. Das ist aber nicht notwendig, <br>
+        weil die Webseite MakeReservation.htm instruiert (mit so genannten meta-daten) den Browser diese Seite immer vom Server herunterzuladen. <br>
+        Wie man das macht ist <a href="https://www.lifewire.com/force-page-load-from-server-3466696" target="_blank">hier</a> beschrieben.<br>
+        <br>
+
+        Leider muss der Entwickler doch die Browserdaten löschen, nach Änderungen in den JavaScripts, die in separaten Dateien auf dem Server sind. <br>
+        Die Webseite wird wieder heruntergeladen, aber nicht die zugehörigen JavaScript-Dateien.<br>
+        <br>
+
+        Für die Homepage könnte man auch versuchen solche meta-daten einzuführen. Leider funktioniert es vermutlich nicht für alle Änderungen, <br>
+        die Programm Admin macht. Beim Aktualisierung der Homepage wird eine Daten-JavaScript-Datei kreiert und auf den Server hochgeladen. <br>
+        Diese Datei wird vermutlich nicht wieder heruntergeladen. Vielleicht kann man den Browser auch instruieren JavaScript-Dateien immer neu zu laden.<br>
+        Muss untersucht werden...<br>
+        <br>
+
+        <br>
+      </p>
+
+      <h3>Entwickler-Version der Web-Applikation</h3>
+
+      <p>
+      Es existiert auch eine <a href="Reservation_development.htm">Entwickler-Version</a>. Diese kann ebenfalls getestet werden<br>
+      sie aber nicht immer funktionieren... <br>
+      <br>
+
+      <br>
+      </p>
+
+    </div> <!-- cl_intranet_page_content -->
+
+
+</body>  
+
+</html>
