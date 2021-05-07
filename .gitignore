@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # FTP configuration files
 # ftp-sync.json
 *.json
+
+# LOGs from FTP Program
+WS_FTP.LOG
