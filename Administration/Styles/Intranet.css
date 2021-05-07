@@ -72,3 +72,19 @@ body
     width: auto;
     float: left;
 }
+
+.cl_intranet_sitzungen_td_black
+{
+    width: 299px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: black;
+}
+
+.cl_intranet_sitzungen_td_red
+{
+    width: 320px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: #ff0028;
+}
