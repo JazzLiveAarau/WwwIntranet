@@ -88,3 +88,11 @@ body
     font-weight: bold;
     color: #ff0028;
 }
+
+.cl_intranet_member_table
+{
+    text-align: left;
+    font-family: 'Arial Narrow';
+    font-weight: bold; 
+    border: 0px;
+}
