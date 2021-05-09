@@ -1,5 +1,5 @@
 /* 
-File: Intranet.css          Date: 2021-05-01 
+File: Intranet.css          Date: 2021-05-08 
 Authors: Gunnar Liden
 
 Allgemeine Informationen
@@ -89,10 +89,56 @@ body
     color: #ff0028;
 }
 
+.cl_intranet_gesuche_td_black
+{
+    width: 99px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: black;
+}
+
+.cl_intranet_gesuche_td_black_w
+{
+    width: 139px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: black;
+}
+
+.cl_intranet_gesuche_td_red
+{
+    width: 168px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: #ff0028;
+}
+
+.cl_intranet_gutscheine_td_red
+{
+    width: 198px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: #ff0028;
+}
+
+.cl_intranet_gutscheine_td_black
+{
+    width: 198px;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    color: black;
+}
+
 .cl_intranet_member_table
 {
     text-align: left;
     font-family: 'Arial Narrow';
     font-weight: bold; 
+    border: 0px;
+}
+
+.cl_intranet_gesuch_table
+{
+    text-align: left;
     border: 0px;
 }
