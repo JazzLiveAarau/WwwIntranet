@@ -368,3 +368,6 @@ FodyWeavers.xsd
 
 # LOGs from FTP Program
 WS_FTP.LOG
+
+# SUISA forms
+/Administration/SUISA/Documents/
