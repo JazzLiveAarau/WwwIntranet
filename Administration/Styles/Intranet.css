@@ -1,5 +1,5 @@
 /* 
-File: Intranet.css          Date: 2021-05-08 
+File: Intranet.css          Date: 2021-06-17 
 Authors: Gunnar Liden
 
 Allgemeine Informationen
@@ -127,14 +127,6 @@ body
     font-family: 'Arial Narrow';
     font-weight: bold;
     color: black;
-}
-
-.cl_intranet_member_table
-{
-    text-align: left;
-    font-family: 'Arial Narrow';
-    font-weight: bold; 
-    border: 0px;
 }
 
 .cl_intranet_gesuch_table
