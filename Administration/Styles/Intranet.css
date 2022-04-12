@@ -1,5 +1,5 @@
 /* 
-File: Intranet.css          Date: 2021-06-17 
+File: Intranet.css          Date: 2022-04-12 
 Authors: Gunnar Liden
 
 Allgemeine Informationen
@@ -139,4 +139,16 @@ body
 {
     text-align: left;
     border: 0px;
+}
+
+.cl_intranet_free_text_title
+{
+    text-align: left;
+    width: 321px;
+}
+
+.cl_intranet_free_text_ref
+{
+    text-align: center;
+    width: 40px;
 }
