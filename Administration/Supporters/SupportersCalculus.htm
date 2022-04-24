@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Supporter Kalkül</title>
+
+      <!-- Styles für die Applikation Intranet   -->
+      <link rel="stylesheet" href="../Styles/Intranet.css">
+
+     <!--  Controls (copied from WwwTasks) -->
+     <script type="text/javascript" src="../Scripts/JazzControls.js"></script>
+
+     <!--  Control Table -->
+     <script type="text/javascript" src="../Scripts/JazzTable.js"></script>
+
+      <script>
+
+        // Initialize the web page
+        function initSupportersCalculus()
+        {
+            createTextBoxAdmissionFee();
+
+            g_supporter_text_box_admission_fee.setClass("cl_intranet_supporter_calculus_text_box");
+
+            g_supporter_text_box_admission_fee.setValue("25");
+
+            createTextBoxAdmissionFeeSupporter();
+
+            g_supporter_text_box_admission_fee_supporter.setClass("cl_intranet_supporter_calculus_text_box");
+
+            g_supporter_text_box_admission_fee_supporter.setValue("15");
+
+            createTextBoxFeeSupporter();
+
+            g_supporter_text_box_fee_supporter.setClass("cl_intranet_supporter_calculus_text_box");
+
+            g_supporter_text_box_fee_supporter.setValue("60");
+
+            createTableSupporter();
+
+        } // initSupportersCalculus
+
+        function oninputTableInput()
+        {
+            this.setTableSupporter();
+
+        } // oninputTableInput
+
+        var g_supporter_text_box_admission_fee = null;
+
+        // Create the admmision fee text box
+        function createTextBoxAdmissionFee()
+        {
+            g_supporter_text_box_admission_fee = new JazzTextBox("id_supporter_admission_fee", "id_supporter_div_admission_fee");
+
+            g_supporter_text_box_admission_fee.setLabelText(" Eintritt");
+
+            g_supporter_text_box_admission_fee.setSize("4");
+
+            g_supporter_text_box_admission_fee.setLabelTextPositionRight();
+
+            g_supporter_text_box_admission_fee.setTitle("Eintritt wenn man nicht Supporter ist");
+
+            g_supporter_text_box_admission_fee.setOninputFunctionName("oninputTableInput");
+        
+        } // createTextBoxAdmissionFee
+
+        var g_supporter_text_box_admission_fee_supporter = null;
+
+        // Create the supporter admmision fee text box
+        function createTextBoxAdmissionFeeSupporter()
+        {
+            g_supporter_text_box_admission_fee_supporter = new JazzTextBox("id_supporter_admission_fee_supporter", "id_supporter_div_admission_fee_supporter");
+
+            g_supporter_text_box_admission_fee_supporter.setLabelText(" Eintritt Supporter");
+
+            g_supporter_text_box_admission_fee_supporter.setSize("4");
+
+            g_supporter_text_box_admission_fee_supporter.setLabelTextPositionRight();
+
+            g_supporter_text_box_admission_fee_supporter.setTitle("Eintritt für einen Supporter");
+
+            g_supporter_text_box_admission_fee_supporter.setOninputFunctionName("oninputTableInput");
+        
+        } // createTextBoxAdmissionFeeSupporter
+
+        var g_supporter_text_box_fee_supporter = null;
+
+        // Create the supporter admmision fee text box
+        function createTextBoxFeeSupporter()
+        {
+            g_supporter_text_box_fee_supporter = new JazzTextBox("id_supporter_fee_supporter", "id_supporter_div_fee_supporter");
+
+            g_supporter_text_box_fee_supporter.setLabelText(" Supporter Beitrag");
+
+            g_supporter_text_box_fee_supporter.setSize("4");
+
+            g_supporter_text_box_fee_supporter.setLabelTextPositionRight();
+
+            g_supporter_text_box_fee_supporter.setTitle("Supporter Beitrag pro Saison");
+
+            g_supporter_text_box_fee_supporter.setOninputFunctionName("oninputTableInput");
+        
+        } // createTextBoxFeeSupporter
+
+        var g_supporter_table = null;
+
+        // Create the supporter admmision fee text box
+        function createTableSupporter()
+        {
+            var n_columns = 4;
+
+            g_supporter_table = new JazzTable("id_supporter_table", "id_supporter_div_table", n_columns, "cl_intranet_supporter_calculus_table");
+
+            this.setTableSupporter();
+
+        } // createTableSupporter
+
+        function setTableSupporter()
+        {
+            var admission_fee_str = g_supporter_text_box_admission_fee.getValue().trim();
+
+            var admission_fee_supporter_str = g_supporter_text_box_admission_fee_supporter.getValue().trim();
+
+            var supporter_fee_str = g_supporter_text_box_fee_supporter.getValue().trim();
+
+            if (!JazzTable.isNumber(admission_fee_str) || !JazzTable.isNumber(admission_fee_supporter_str) || !JazzTable.isNumber(supporter_fee_str))
+            {
+                return;
+            }
+
+            var admission_fee = parseInt(admission_fee_str);
+
+            var admission_fee_supporter = parseInt(admission_fee_supporter_str);
+
+            var supporter_fee = parseInt(supporter_fee_str);
+
+            g_supporter_table.initTable();
+
+            var table_header = ["Anzahl<br>Konzerte", "Nicht<br>Supporter", "Supporter", "Gewinn<br>Supporter"];
+
+            g_supporter_table.appendRow(table_header);
+
+
+            for (var concert_number=1; concert_number <= 12; concert_number++)
+            {
+                var column_array = [];
+                
+                column_array[0] =  concert_number.toString();
+
+                column_array[1] = (concert_number * admission_fee).toString();
+
+                column_array[2] = (concert_number * admission_fee_supporter + supporter_fee).toString();
+
+                column_array[3] = (concert_number * admission_fee - concert_number * admission_fee_supporter - supporter_fee).toString();
+
+                g_supporter_table.appendRow(column_array);
+            }
+        } // setTableSupporter
+
+      </script>
+
+</head>
+<body onload="initSupportersCalculus()">
+    <hr>
+    <div class= "cl_intranet_page_header">Supporter</div>
+    <hr>
+  
+    <div class= "cl_intranet_page_content"> 
+      
+      <h3>Supporter Kalkül</h3>
+
+        <div id= "id_supporter_div_admission_fee" ></div>
+
+        <div id= "id_supporter_div_admission_fee_supporter" ></div>
+
+        <div id= "id_supporter_div_fee_supporter" ></div>
+
+        <div id= "id_supporter_div_table" ></div>
+
+    </div>
+    
+</body>
+</html>
