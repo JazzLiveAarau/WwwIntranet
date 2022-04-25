@@ -37,15 +37,31 @@
 
             g_supporter_text_box_fee_supporter.setClass("cl_intranet_supporter_calculus_text_box");
 
-            g_supporter_text_box_fee_supporter.setValue("60");
+            g_supporter_text_box_fee_supporter.setValue("88");
 
             createTableSupporter();
+
+            createTextBoxNumberSupporter();
+
+            g_supporter_text_box_number_supporter.setClass("cl_intranet_supporter_calculus_text_box");
+
+            g_supporter_text_box_number_supporter.setValue("82");
+
+            createTextBoxNumberGuests();
+
+            g_supporter_text_box_average_guests.setClass("cl_intranet_supporter_calculus_text_box");
+
+            g_supporter_text_box_average_guests.setValue("32");
+
+            createTableSeasonSupporter();
 
         } // initSupportersCalculus
 
         function oninputTableInput()
         {
             this.setTableSupporter();
+
+            this.setTableSeasonSupporter();
 
         } // oninputTableInput
 
@@ -94,7 +110,7 @@
         {
             g_supporter_text_box_fee_supporter = new JazzTextBox("id_supporter_fee_supporter", "id_supporter_div_fee_supporter");
 
-            g_supporter_text_box_fee_supporter.setLabelText(" Supporter Beitrag");
+            g_supporter_text_box_fee_supporter.setLabelText(" Supporter Beitrag durchschnittlich");
 
             g_supporter_text_box_fee_supporter.setSize("4");
 
@@ -106,9 +122,48 @@
         
         } // createTextBoxFeeSupporter
 
+        var g_supporter_text_box_number_supporter = null;
+
+        // Create the number of supporter  text box
+        function createTextBoxNumberSupporter()
+        {
+            g_supporter_text_box_number_supporter = new JazzTextBox("id_supporter_number_supporter", "id_supporter_div_number_supporter");
+
+            g_supporter_text_box_number_supporter.setLabelText(" Anzahl Supporter");
+
+            g_supporter_text_box_number_supporter.setSize("4");
+
+            g_supporter_text_box_number_supporter.setLabelTextPositionRight();
+
+            g_supporter_text_box_number_supporter.setTitle("Anzahl Supporter einer Saison");
+
+            g_supporter_text_box_number_supporter.setOninputFunctionName("oninputTableInput");
+        
+        } // createTextBoxNumberSupporter
+
+
+        var g_supporter_text_box_average_guests = null;
+
+        // Create the average number of guests pro concert  text box
+        function createTextBoxNumberGuests()
+        {
+            g_supporter_text_box_average_guests = new JazzTextBox("id_supporter_number_guests", "id_supporter_div_number_guests");
+
+            g_supporter_text_box_average_guests.setLabelText(" Anzahl Gäste pro Konzert durchshnittlich einer Saison");
+
+            g_supporter_text_box_average_guests.setSize("4");
+
+            g_supporter_text_box_average_guests.setLabelTextPositionRight();
+
+            g_supporter_text_box_average_guests.setTitle("Durchshnittliche Anzahl Gäste pro Konzert einer Saison");
+
+            g_supporter_text_box_average_guests.setOninputFunctionName("oninputTableInput");
+        
+        } // createTextBoxNumberGuests
+
         var g_supporter_table = null;
 
-        // Create the supporter admmision fee text box
+        // Create the supporter table
         function createTableSupporter()
         {
             var n_columns = 4;
@@ -119,6 +174,7 @@
 
         } // createTableSupporter
 
+        // Set the supporter table
         function setTableSupporter()
         {
             var admission_fee_str = g_supporter_text_box_admission_fee.getValue().trim();
@@ -161,6 +217,81 @@
             }
         } // setTableSupporter
 
+        var g_supporter_season_table = null;
+
+        // Create the table season supporter
+        function createTableSeasonSupporter()
+        {
+            var n_columns = 6;
+
+            g_supporter_season_table = new JazzTable("id_supporter_season_table", "id_div_supporter_season_table", n_columns, "cl_intranet_supporter_calculus_table");
+
+            this.setTableSeasonSupporter();
+
+        } // createTableSeasonSupporter
+		
+
+        // Set the season supporter table
+        function setTableSeasonSupporter()
+        {
+            var admission_fee_str = g_supporter_text_box_admission_fee.getValue().trim();
+
+            var admission_fee_supporter_str = g_supporter_text_box_admission_fee_supporter.getValue().trim();
+
+            var supporter_fee_str = g_supporter_text_box_fee_supporter.getValue().trim();
+			
+			var number_supporter_str = g_supporter_text_box_number_supporter.getValue().trim();
+			
+			var number_guests_str = g_supporter_text_box_average_guests.getValue().trim();
+
+            if (!JazzTable.isNumber(admission_fee_str) || !JazzTable.isNumber(admission_fee_supporter_str) || !JazzTable.isNumber(supporter_fee_str) || 
+				!JazzTable.isNumber(number_supporter_str) || !JazzTable.isNumber(number_guests_str)	)
+            {
+                return;
+            }
+
+            var admission_fee = parseInt(admission_fee_str);
+
+            var admission_fee_supporter = parseInt(admission_fee_supporter_str);
+
+            var supporter_fee = parseInt(supporter_fee_str);
+			
+			var number_guests = parseInt(number_guests_str);
+			
+			var number_supporter = parseInt(number_supporter_str);
+
+            g_supporter_season_table.initTable();
+
+            var table_header = ["Anzahl<br>Konzerte", "Anzahl<br>Nicht<br>Supporter<br>Durchschnitt", "Anzahl<br>Supporter<br>Durchschnitt", "Einahme<br>Nicht<br>Supporter", "Einahme<br>Supporter", "Einahme<br>Jazzclub<br>Total"];
+
+            g_supporter_season_table.appendRow(table_header);
+			
+			var n_concerts = 12;
+
+            for (var n_supporter_concert=0; n_supporter_concert <= number_guests; n_supporter_concert = n_supporter_concert + 2)
+            {
+                var column_array = [];
+                
+                column_array[0] =  n_concerts.toString();
+				
+				column_array[1] =  (number_guests - n_supporter_concert).toString();
+				
+				column_array[2] =  n_supporter_concert.toString();
+
+                var sum_no_supporters = n_concerts * (number_guests - n_supporter_concert) * admission_fee;
+
+                column_array[3] = sum_no_supporters.toString();
+
+                var sum_supporters = n_concerts * n_supporter_concert * admission_fee_supporter + number_supporter * supporter_fee;
+
+                column_array[4] = sum_supporters.toString();
+
+                column_array[5] = (sum_no_supporters + sum_supporters).toString();
+
+                g_supporter_season_table.appendRow(column_array);
+            }
+        } // setTableSeasonSupporter
+
       </script>
 
 </head>
@@ -178,6 +309,12 @@
         <div id= "id_supporter_div_admission_fee_supporter" ></div>
 
         <div id= "id_supporter_div_fee_supporter" ></div>
+
+        <div id= "id_supporter_div_number_supporter" ></div>
+
+        <div id= "id_supporter_div_number_guests" ></div>
+
+        <div id= "id_div_supporter_season_table" ></div>
 
         <div id= "id_supporter_div_table" ></div>
 

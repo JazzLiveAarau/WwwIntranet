@@ -1,5 +1,5 @@
 /* 
-File: Intranet.css          Date: 2022-04-24 
+File: Intranet.css          Date: 2022-04-25 
 Authors: Gunnar Liden
 
 Allgemeine Informationen
@@ -164,7 +164,7 @@ body
 .cl_intranet_supporter_calculus_table
 {
     margin-top: 20px;
-    border: 1px;
+    margin-bottom: 20px;
 }
 
 .cl_intranet_supporter_calculus_table th
