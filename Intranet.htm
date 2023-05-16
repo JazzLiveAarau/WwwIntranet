@@ -9,8 +9,20 @@
     <!-- Styles für die Applikation Intranet   -->
     <link rel="stylesheet" href="Administration/Styles/Intranet.css">
 
+     <!-- Main functions for the web login-logout controls -->
+     <script type="text/javascript" src="Administration/Scripts/MainIntranet.js"></script>
+
+    <!--  Class for the application XML file JazzApplication.xml and other XML files -->
+    <script type="text/javascript" src="https://jazzliveaarau.ch/JazzScripts/Xml_20230515.js"></script> 
+
+     <!-- Standard controls -->
+     <script type="text/javascript" src="https://jazzliveaarau.ch/JazzScripts/Controls_20230514.js"></script>
+
+     <!-- Login and logout for web applications -->
+     <script type="text/javascript" src="https://jazzliveaarau.ch/JazzScripts/LoginLogout_20230515.js"></script>
+
 </head>
-<body>
+<body onload= "initIntranet()">
     <hr>
     <div class= "cl_intranet_text_logo">JAZZ <i>live</i> AARAU Intranet</div>
 
@@ -18,7 +30,10 @@
 
     <hr>
 
-    <div class= "cl_intranet_page_content">
+     <!-- Place holder for the member login logout controls -->
+    <div id= "id_div_web_login_logout" ></div>
+
+    <div id= "id_intranet_page_content" class= "cl_intranet_page_content">
 
         <div class= "cl_intranet_page_content_row">
             <div class= "cl_intranet_page_content_row_link"><a href="Administration/Documents.htm">Dokumente</a></div>
