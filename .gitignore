@@ -372,3 +372,5 @@ WS_FTP.LOG
 # SUISA forms
 /Administration/Applikationen/Documents/
 
+# Obsolete concert documents
+/Administration/Konzert/Obsolete/
