@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--  JAZZ live AARAU Application data -->
 <AppData>
-  <PublishSeasonStartYear>2020</PublishSeasonStartYear>
+  <PublishSeasonStartYear>2025</PublishSeasonStartYear>
   <AboutUsHeader>Konzept</AboutUsHeader>
-  <AboutUsOne>Die von JAZZ live AARAU veranstalteten Konzerte finden zwischen Oktober und März statt. Der Salmensaal des Restaurants Spaghetti Factory in Aarau eignet sich dafür optimal. Er verfügt über ein angenehmes Ambiente und eine gute Akustik. Die Anlässe finden jeweils am Samstagnachmittag zwischen 15:30 und 17:30 Uhr statt.</AboutUsOne>
+  <AboutUsOne>Die von JAZZ live AARAU veranstalteten Konzerte finden zwischen Oktober und März statt. Der Salmensaal des Restaurants Spagi by Marcello in Aarau eignet sich dafür optimal. Er verfügt über ein angenehmes Ambiente und eine gute Akustik. Die Anlässe finden jeweils am Samstagnachmittag zwischen 15:30 und 17:30 Uhr statt.</AboutUsOne>
   <AboutUsTwo>Die Programmverantwortlichen legen Wert auf abwechslungsreiche sowie anspruchsvolle Musik. Dass diese einen Bezug zur Jazz- wie auch europäischen Musiktradition zeigt, ist in der aktuellen Jazzszene selbstverständlich. Die Auftritte sind spannend sowie unterhaltend, was uns vom Publikum jeweils unmittelbar bestätigt wird.</AboutUsTwo>
   <AboutUsThree>JAZZ live AARAU präsentiert seinen Gästen vorwiegend das ausgezeichnete einheimische Musikschaffen. </AboutUsThree>
   <RequestCaption>Anfragen</RequestCaption>
   <RequestHeader>Anfrage für einen Auftritt</RequestHeader>
-  <RequestDatesDisplay>FALSE</RequestDatesDisplay>
+  <RequestDatesDisplay>TRUE</RequestDatesDisplay>
   <RequestNoDatesText>&lt;br&gt;&lt;br&gt;Liebe Musikerinnen &amp; Musiker
-&lt;br&gt;&lt;br&gt;Das Programm für die Saison 2021-2022 ist komplett. Anfragen für die übernächste Saison 2022-2023 werden erst wieder ab Oktober 2021 entgegen genommen und beantwortet. Bis dann werden auch die konkreten Gigdaten aufgeschaltet sein.
-&lt;br&gt;&lt;br&gt;JAZZ &lt;i&gt;live&lt;/i&gt; AARAU wünscht ein produktives Jahr mit baldmöglichsten Entspannungstendenzen!</RequestNoDatesText>
+&lt;br&gt;&lt;br&gt;Das Programm für die Saison 2025-2026 ist komplett. Anfragen für die übernächste Saison 2026-2027 werden erst wieder ab Oktober 2025 entgegen genommen und beantwortet. Bis dann werden auch die konkreten Gigdaten aufgeschaltet sein.
+&lt;br&gt;&lt;br&gt;Euer JAZZ live AARAU Team</RequestNoDatesText>
   <RequestDatesText>Dear international artists and bookers!
 JAZZ live AARAU focuses on the swiss jazz scene. We can only accept booking requests from swiss jazz bands, bands that are prominent in the swiss jazz scene or bands with a swiss leader. We focus on the local jazz scene and especially support new projects and younger bands.
 
 Liebe internationale Künstler und Booker!
 JAZZ live AARAU bucht vorwiegend Schweizer Jazz Bands, Bands, die in der Schweizer Jazzszene aktiv sind oder die eine/n Schweizer Bandleader/in haben. Wir richten unseren Fokus auf die lokale Jazzszene und programmieren auch neue Projekte und jüngere Bands.
 
-Spieldaten der nächsten Saison 2021-2022 sind:</RequestDatesText>
-  <RequestContentHeader>Aufritte jeweils Samstag, 15:30 bis 17:30 Uhr
+Spieldaten der nächsten Saison 2026-2027 sind:</RequestDatesText>
+  <RequestContentHeader>Aufritte jeweils Samstag, 15:00 bis 17:00 Uhr
 
 Anfragen &lt;b&gt;müssen&lt;/b&gt; folgende Infos enthalten:</RequestContentHeader>
   <RequestContentOne>
@@ -37,12 +37,12 @@ Aktuelle CD wird gegebenenfalls durch JAZZ live AARAU angefordert.</RequestConte
   <RequestEmailTitle>Bookinganfragen bitte senden an</RequestEmailTitle>
   <RequestEmailCaption>anfrage@jazzliveaarau.ch</RequestEmailCaption>
   <RequestEmailRemark>Anfragen über direkte oder private Emailadressen der Vorstandsmitglieder werden ignoriert.</RequestEmailRemark>
-  <RequestEndParagraph>Ein ernsthaftes Anliegen ist es uns, sämtliche Anfragen zur Kenntnis zu nehmen und auch darauf zu antworten. Dies können und wollen wir aber nur bei vollständigen Anfragen gewährleisten. </RequestEndParagraph>
+  <RequestEndParagraph>Ein ernsthaftes Anliegen ist es uns, sämtliche Anfragen zur Kenntnis zu nehmen und auch darauf zu antworten. Dies können und wollen wir aber nur bei vollständigen Anfragen gewährleisten.</RequestEndParagraph>
   <PremisesHeader>Lokal</PremisesHeader>
-  <Premises>Spaghetti Factory Salmen</Premises>
+  <Premises>Spagi by Marcello</Premises>
   <PremisesStreet>Metzgergasse 8</PremisesStreet>
   <PremisesCity>5000 Aarau</PremisesCity>
-  <PremisesWebsite>http://www.bindella.ch/de/spaghetti-factory-salmen.html</PremisesWebsite>
+  <PremisesWebsite>http://www.spagi.ch</PremisesWebsite>
   <PremisesTelephone>+41 62 822 23 12</PremisesTelephone>
   <PremisesPhoto>ImagesForApps/jazz_premises.png</PremisesPhoto>
   <PremisesMap>ImagesForApps/map_premises.png</PremisesMap>
@@ -113,7 +113,7 @@ Bemerkungen:
 Bitte beachten, dass reservierte Plätze 10 Minuten vor Konzertbeginn eingenommen werden müssen, sonst werden sie freigegeben.
 </ReservationText>
   <ReservationDays>350</ReservationDays>
-  <ReservationNotAllowed>TRUE</ReservationNotAllowed>
+  <ReservationNotAllowed>FALSE</ReservationNotAllowed>
   <ReservationNotAllowedText>Es ist noch nicht möglich zu reservieren.</ReservationNotAllowedText>
   <ReservationUrl>http://www.jazzliveaarau.ch</ReservationUrl>
   <NewsletterSubject>Reservation </NewsletterSubject>
@@ -260,7 +260,7 @@ Bitte beachten, dass reservierte Plätze 10 Minuten vor Konzertbeginn eingenomme
   <SearchStringEmpty>Such-String ist leer</SearchStringEmpty>
   <SearchAlternativeNotSet>Such-Alternative nicht gewählt</SearchAlternativeNotSet>
   <CaptionContactPersonConcert>Kontaktperson des Konzerts</CaptionContactPersonConcert>
-  <ContactConcertMemberNumber>1</ContactConcertMemberNumber>
+  <ContactConcertMemberNumber>7</ContactConcertMemberNumber>
   <ContactConcertTelephone>+41774341032</ContactConcertTelephone>
   <ContactConcertEmail>konzert@jazzliveaarau.ch</ContactConcertEmail>
   <CalendarEventAdded>Ereignis ist in Kalender zugefügt</CalendarEventAdded>
@@ -271,7 +271,7 @@ Bitte beachten, dass reservierte Plätze 10 Minuten vor Konzertbeginn eingenomme
       <EmailAddress>laura.cesar@jazzliveaarau.ch</EmailAddress>
       <EmailPrivate>lauracesar@gmx.ch</EmailPrivate>
       <Telephone>+41 79 857 75 13</Telephone>
-      <TelephoneFix>+41 56 610 55 72</TelephoneFix>
+      <TelephoneFix>NotYetSetNodeValue</TelephoneFix>
       <Street>Rossweid 11</Street>
       <City>Büttikon</City>
       <PostCode>5619</PostCode>
@@ -328,9 +328,9 @@ Betreuung der Musiker</Tasks>
       <TasksShort>Programm</TasksShort>
       <Why>Neben Studium und Leichtathletik ein leidenschaftlicher Saxofonist, fungiert bei Bedarf als Tontechniker.</Why>
       <StartYear>2013</StartYear>
-      <EndYear>NotYetSetNodeValue</EndYear>
+      <EndYear>2022</EndYear>
       <Password>pilihp</Password>
-      <Vorstand>true</Vorstand>
+      <Vorstand>false</Vorstand>
       <Number>3</Number>
     </Member>
     <Member>
@@ -381,7 +381,7 @@ Betreuung der Musiker</Tasks>
       <EmailAddress>alex.vimposek@jazzliveaarau.ch</EmailAddress>
       <EmailPrivate>vimposek@blowup.ch</EmailPrivate>
       <Telephone>+41 79 687 62 88</Telephone>
-      <TelephoneFix>+41 62 687 62 88</TelephoneFix>
+      <TelephoneFix>+41 62 296 75 34</TelephoneFix>
       <Street>Auenstrasse 15</Street>
       <City>Niedergösgen</City>
       <PostCode>5013</PostCode>
@@ -412,8 +412,8 @@ Betreuung der Musiker</Tasks>
 Homepage
 Webapplikation Flyer
 Reservationssystem
-JazzApp
-Gestaltung Plakate und Flyer</Tasks>
+Adressdatenbank
+Newsletter App</Tasks>
       <TasksShort>Programmierer</TasksShort>
       <Why>Der gebürtige Schwede ist seit 20 Jahren zuständig für die Website und alles, was mit Computer zu tun hat. Seine Motivation ist die auch in der Pension nicht nachlassende kindliche Freude daran. 
 		</Why>
@@ -596,7 +596,7 @@ Konzertfotografie</Tasks>
       <Name>Max</Name>
       <FamilyName>Aeschlimann</FamilyName>
       <EmailAddress>NotYetSetNodeValue</EmailAddress>
-      <EmailPrivate>max.aes@hispeed.ch</EmailPrivate>
+      <EmailPrivate>max.aeschli@gmail.com</EmailPrivate>
       <Telephone>NotYetSetNodeValue</Telephone>
       <TelephoneFix>NotYetSetNodeValue</TelephoneFix>
       <Street>Martha Ringier-Strasse 10</Street>
@@ -620,7 +620,7 @@ Konzertfotografie</Tasks>
       <EmailPrivate>keller.hubert@bluewin.ch</EmailPrivate>
       <Telephone>+41 79 409 43 65</Telephone>
       <TelephoneFix>NotYetSetNodeValue</TelephoneFix>
-      <Street>Hörnliweg 13</Street>
+      <Street>Winkelrain 2</Street>
       <City>Endingen</City>
       <PostCode>5304</PostCode>
       <PhotoMidSize>NotYetSetNodeValue</PhotoMidSize>
@@ -650,7 +650,8 @@ Betreuung der Supporter und Sponsoren
       <PhotoSmallSize>ImagesForApps/Members/HanniHeller.jpg</PhotoSmallSize>
       <Tasks>Webmaster
 Eintrittskasse
-Platzreservationen</Tasks>
+Platzreservationen
+Gestaltung Plakate und Flyer</Tasks>
       <TasksShort>Kasse</TasksShort>
       <Why>Ist noch immer bestrebt, ihr Saxophonspiel zu verbessern, wandert zum Ausgleich, versucht dem Unkraut im Garten Herr zu werden und improvisert auch wenn es drum geht, aus einer Bremsscheibe und einer Gartenhacke eine Skuptur zu schweissen.</Why>
       <StartYear>2017</StartYear>
@@ -660,24 +661,24 @@ Platzreservationen</Tasks>
       <Number>7</Number>
     </Member>
     <Member>
-      <Name>Apple</Name>
-      <FamilyName>iPhoneAppTester</FamilyName>
-      <EmailAddress>NotYetSetNodeValue</EmailAddress>
-      <EmailPrivate>NotYetSetNodeValue</EmailPrivate>
+      <Name>Heiri</Name>
+      <FamilyName>Peterhans</FamilyName>
+      <EmailAddress>Heiri.Peterhans@jazzliveaarau.ch</EmailAddress>
+      <EmailPrivate>peterhanssh@bluemail.ch</EmailPrivate>
       <Telephone>NotYetSetNodeValue</Telephone>
-      <TelephoneFix>NotYetSetNodeValue</TelephoneFix>
-      <Street>NotYetSetNodeValue</Street>
-      <City>NotYetSetNodeValue</City>
-      <PostCode>NotYetSetNodeValue</PostCode>
+      <TelephoneFix>+41 62 822 56 85</TelephoneFix>
+      <Street>Hornstrasse 29</Street>
+      <City>Erlinsbach SO</City>
+      <PostCode>5015</PostCode>
       <PhotoMidSize>NotYetSetNodeValue</PhotoMidSize>
-      <PhotoSmallSize>NotYetSetNodeValue</PhotoSmallSize>
-      <Tasks>Test of the iPhone app</Tasks>
-      <TasksShort>NotYetSetNodeValue</TasksShort>
+      <PhotoSmallSize>ImagesForApps/Members/HeiriPeterhans.jpg</PhotoSmallSize>
+      <Tasks>NotYetSetNodeValue</Tasks>
+      <TasksShort>Finanzen</TasksShort>
       <Why>NotYetSetNodeValue</Why>
-      <StartYear>2019</StartYear>
-      <EndYear>2019</EndYear>
-      <Password>jazzlive</Password>
-      <Vorstand>false</Vorstand>
+      <StartYear>2025</StartYear>
+      <EndYear>NotYetSetNodeValue</EndYear>
+      <Password>velos</Password>
+      <Vorstand>true</Vorstand>
       <Number>19</Number>
     </Member>
   </Members>
